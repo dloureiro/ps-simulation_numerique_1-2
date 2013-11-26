@@ -83,7 +83,7 @@ Prenons encore un autre domaine, et je pense que j'aurais bien illustré la situ
 
  * $\Lambda$CDM  : où l'on considère la relativité générale avec la constante cosmologique (équation d'état cosmologique [^eqetatcosmowp] constante, pour simplifier le ratio nommé $w$ entre la pression et la densité d'un fluide considéré parfait qui remplirait l'univers vaut -1) et de la matière noire froide (La matière noire froide ou **CDM**, de l'anglais *Cold dark matter*, est une théorie améliorée à partir de celle du Big bang. Elle repose sur le postulat supplémentaire que la majeure partie de la matière de l'Univers serait constituée d'éléments non observables par le rayonnement électromagnétique - noire - et dont les constituants se déplacent lentement - froide - [^mnfwp])
  * modèle à base de quintessence [^quintessencewp]: où l'on considère la relativité générale avec une énergie noire plus générique (qui évolue au cours du temps et qui correspond à un champ scalaire avec une équation d'état qui est dynamique, pour simplifier $w$ varie au cours du temps) et de la matière noire froide
- * modèle d'énergie fantôme [^phantomenergywp]: qui est un dérivé du modèle à base de quintessence où l'équation d'état est satisfaite avec une valeur de $w$ inférieure à -1. Ces modèles pousse pour des univers cycliques.
+ * modèle d'énergie fantôme [^phantomenergywp]: qui est un dérivé du modèle à base de quintessence où l'équation d'état est satisfaite avec une valeur de $w$ inférieure à -1. Ces modèles pousse pour des univers cycliques ou dit de "Big Rip".
 
 Cela représentait la simulation de l'évolution de plus de 550 milliards de particules en utilisant 76000 coeurs de processeurs et plus de 300 Téra-octets (37500 DVDs) de mémoire vive pendant l'équivalent de 50 millions d'heures de calcul (presque 28 jours grâce aux 76k coeurs)! Au final ils ont généré 1,5 Péta-octets de données utiles (187500 DVDs de données) qui serviront à ALMA, VLT, au futur téléscope spatial Euclid, mais aussi au Radio téléscope Quare Kilometer Array qui sera opérationnel en 2020.
 
@@ -192,6 +192,38 @@ Je pense que je vais m'arrêter là sur la simulation pour ce podcast. On a pu v
 
 Dans la suite de ce podcast, on ira plus sur les simulations pour des équations déterministes. On verra trois grandes méthodes utilisées pour passer des modèles à l'ordinateur, et ensuite les ramifications en terme de mathématiques avec les méthodes utilisées pour résoudre les problèmes posés et ce que l'informatique à fait pour les résoudre dans des temps corrects.
 
+# Note
+
+## Matière noire, énergie noire et la composition de l'univers
+
+Si l'on souhaite s'intéresser à ces notions, il est possible de se référer aux sources suivantes : 
+
+ * Wikipédia [^matnoirewp] et [^energiesombrewp]
+ * Le livre de Trinh Xuan Thaun : Désir d'infini [^desirinfini]
+ * Ou encore le très bon dossier de Mathieu, l'épisode 31 qui traitait de la question [^matnoireps]
+
+En ce qui concerne la matière noire il y a grosso modo deux grands types de matière noire : 
+
+ * La matière noire chaude : composée de particules très rapides dont la vitesse est proche de celle de la lumière
+ * La matière noire froide : composée de particules plus massives et plus lentes
+
+Comme expliqué sur Wikipédia et très bien aussi dans le dossier de Mathieu :
+
+ * Si l'Univers était dominé par de la matière noire chaude, la très grande vitesse des particules la constituant empêcherait dans un premier temps la formation d'une structure plus petite que le superamas de galaxies qui ensuite se fragmente en amas de galaxies, puis en galaxies, etc. C'est le scénario dit "du haut vers le bas ", puisque les plus grosses structures se forment d'abord, pour ensuite se diviser. Le meilleur candidat pour constituer la matière noire chaude est le neutrino. 
+ * En revanche, si la matière noire froide dominait l'Univers, les particules vont parcourir une distance plus petite et donc effacer les fluctuations de densité sur des étendues plus petites que dans le cas de matière noire chaude. La matière ordinaire va alors se regrouper pour former d'abord des galaxies (à partir de nuages de gaz), qui elles-mêmes se regrouperont en amas, puis superamas. C'est le scénario dit "du bas vers le haut". Les candidats à la matière noire froide sont les WIMP et les MACHO."
+
+Actuellement, c'est le modèle de matière noire froide qui semble l'emporter. En effet, les galaxies sont en équilibre dynamique, ce qui laisse penser qu'elles se sont créées avant les amas — dont tous ne semblent pas encore stables — à qui il faut plus de temps pour atteindre cet équilibre. Cependant, les théories introduisent aujourd'hui un peu de matière noire chaude. Celle-ci est nécessaire pour expliquer la formation des amas ; la matière froide seule ne pouvant la permettre en si peu de temps.
+
+## Énergie fantôme
+
+Comme expliqué sur Wikipédia [^energiefantomewp] :
+
+En cosmologie, l'énergie fantôme désigne une forme hypothétique d'énergie dont la densité aurait la particularité surprenante d'augmenter lors de l'expansion de l'Univers. Cette énergie est un candidat potentiel à l'énergie noire. Cette forme d'énergie noire implique la violation d'un principe physique connu sous le nom de condition faible sur l'énergie [^conditionfaibleenergiewp]  (valable pour les fluides parfaits). Cet argument est l'un des principaux écueils théoriques à l'existence de l'énergie fantôme. Cependant, la condition faible sur l'énergie n'est valable que pour les fluides parfaits. L'énergie sombre pourrait donc ne pas enfreindre ce principe, à condition de postuler une interaction avec d'autres composants cosmologiques, comme, par exemple, la matière sombre.
+L'énergie fantôme, si elle existe, serait responsable d'un emballement de l'expansion de l'Univers, qui causerait un éloignement arbitrairement grand des différents objets célestes les uns des autres en un temps fini, puis une dislocation de ceux-ci : c'est le modèle cosmologique du Big Rip [^bigripwp]. Dans ce scénario, la densité de l'univers atteint une valeur infinie en un temps fini, terminant son existence par une singularité gravitationnelle où toute structure, des amas de galaxies aux atomes, sont détruits.
+
+Ce modèle diffère du Big Crunch, dans lequel l'expansion s'arrête pour laisser place à une phase de contraction. Dans ce dernier cas, les objets astrophysiques sont détruits car ils entrent en collision les uns avec les autres (ils sont "écrasés", d'où Big "Crunch"), alors que dans le cas du Big Rip, ils sont étirés par une expansion de plus en plus violente, jusqu'à être disloqués (ils sont « déchirés », d'où Big "Rip").
+L'hypothèse du scénario du Big Rip est pour l'heure marginalement compatible avec les données observationnelles et reste donc relativement spéculative.
+
 [^montecarlo]: [http://132.187.98.10:8080/encyclopedia/en/monteCarlo.pdf](http://132.187.98.10:8080/encyclopedia/en/monteCarlo.pdf)
 [^lorenzwp]: [http://fr.wikipedia.org/wiki/Edward_Norton_Lorenz](http://fr.wikipedia.org/wiki/Edward_Norton_Lorenz)
 [^sysdynlorenzwp]: [http://fr.wikipedia.org/wiki/Syst%C3%A8me_dynamique_de_Lorenz](http://fr.wikipedia.org/wiki/Syst%C3%A8me_dynamique_de_Lorenz)
@@ -215,3 +247,10 @@ Dans la suite de ce podcast, on ira plus sur les simulations pour des équations
 [^eqetatcosmowp]: [http://en.wikipedia.org/wiki/Equation_of_state_(cosmology)](http://en.wikipedia.org/wiki/Equation_of_state_(cosmology))
 [^top500]: [http://www.top500.org/lists/2013/11/](http://www.top500.org/lists/2013/11/)
 [^mnfwp]: [http://fr.wikipedia.org/wiki/Mati%C3%A8re_noire_froide](http://fr.wikipedia.org/wiki/Mati%C3%A8re_noire_froide)
+[^matnoirewp]: [http://fr.wikipedia.org/wiki/Mati%C3%A8re_noire](http://fr.wikipedia.org/wiki/Mati%C3%A8re_noire)
+[^energiesombrewp]: [http://fr.wikipedia.org/wiki/%C3%89nergie_sombre](http://fr.wikipedia.org/wiki/%C3%89nergie_sombre)
+[^desirinfini]: [http://www.fayard.fr/desir-dinfini-9782213635118](http://www.fayard.fr/desir-dinfini-9782213635118)
+[^matnoireps]: [http://www.podcastscience.fm/dossiers/2011/04/07/dossier-la-matiere-noire/](http://www.podcastscience.fm/dossiers/2011/04/07/dossier-la-matiere-noire/)
+[^energiefantomewp]: [http://fr.wikipedia.org/wiki/%C3%89nergie_fant%C3%B4me](http://fr.wikipedia.org/wiki/%C3%89nergie_fant%C3%B4me)
+[^conditionfaibleenergiewp]: [http://fr.wikipedia.org/wiki/Condition_sur_l%27%C3%A9nergie](http://fr.wikipedia.org/wiki/Condition_sur_l%27%C3%A9nergie)
+[^bigripwp]: [http://fr.wikipedia.org/wiki/Big_Rip](http://fr.wikipedia.org/wiki/Big_Rip)
