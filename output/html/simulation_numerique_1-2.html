@@ -72,7 +72,7 @@
 <ul>
 <li><span class="math">Λ </span>CDM : où l'on considère la relativité générale avec la constante cosmologique (équation d'état cosmologique <sup><a href="#fn13" class="footnoteRef" id="fnref13">13</a></sup> constante, pour simplifier le ratio nommé <span class="math"><em>w</em></span> entre la pression et la densité d'un fluide considéré parfait qui remplirait l'univers vaut -1) et de la matière noire froide (La matière noire froide ou <strong>CDM</strong>, de l'anglais <em>Cold dark matter</em>, est une théorie améliorée à partir de celle du Big bang. Elle repose sur le postulat supplémentaire que la majeure partie de la matière de l'Univers serait constituée d'éléments non observables par le rayonnement électromagnétique - noire - et dont les constituants se déplacent lentement - froide - <sup><a href="#fn14" class="footnoteRef" id="fnref14">14</a></sup>)</li>
 <li>modèle à base de quintessence <sup><a href="#fn15" class="footnoteRef" id="fnref15">15</a></sup>: où l'on considère la relativité générale avec une énergie noire plus générique (qui évolue au cours du temps et qui correspond à un champ scalaire avec une équation d'état qui est dynamique, pour simplifier <span class="math"><em>w</em></span> varie au cours du temps) et de la matière noire froide</li>
-<li>modèle d'énergie fantôme <sup><a href="#fn16" class="footnoteRef" id="fnref16">16</a></sup>: qui est un dérivé du modèle à base de quintessence où l'équation d'état est satisfaite avec une valeur de <span class="math"><em>w</em></span> inférieure à -1. Ces modèles pousse pour des univers cycliques.</li>
+<li>modèle d'énergie fantôme <sup><a href="#fn16" class="footnoteRef" id="fnref16">16</a></sup>: qui est un dérivé du modèle à base de quintessence où l'équation d'état est satisfaite avec une valeur de <span class="math"><em>w</em></span> inférieure à -1. Ces modèles pousse pour des univers cycliques ou dit de &quot;Big Rip&quot;.</li>
 </ul>
 <p>Cela représentait la simulation de l'évolution de plus de 550 milliards de particules en utilisant 76000 coeurs de processeurs et plus de 300 Téra-octets (37500 DVDs) de mémoire vive pendant l'équivalent de 50 millions d'heures de calcul (presque 28 jours grâce aux 76k coeurs)! Au final ils ont généré 1,5 Péta-octets de données utiles (187500 DVDs de données) qui serviront à ALMA, VLT, au futur téléscope spatial Euclid, mais aussi au Radio téléscope Quare Kilometer Array qui sera opérationnel en 2020.</p>
 <h3 id="dautres-domaines-où-les-limitations-ne-sont-pas-forcément-physiques">D'autres domaines où les limitations ne sont pas forcément physiques</h3>
@@ -148,6 +148,29 @@
 <p>Une des dernières problématiques avec l'usage de PRNG est dans le cas de parallélisation de code. Quand un code est déployé sur des serveurs de calcul, une des problématiques qui apparaît est de pouvoir générer pour chaque bout de code une série de nombres aléatoires qui sont indépendants et identiquement distribués et que notamment, on ne se retrouve pas à utiliser les mêmes nombres pseudo-aléatoires sur chaque noeud de calcul.</p>
 <p>Je pense que je vais m'arrêter là sur la simulation pour ce podcast. On a pu voir les raisons du besoin de simulation, des problématiques rencontrées avec différents champs de recherche et la première simulation numérique qui était probabiliste.</p>
 <p>Dans la suite de ce podcast, on ira plus sur les simulations pour des équations déterministes. On verra trois grandes méthodes utilisées pour passer des modèles à l'ordinateur, et ensuite les ramifications en terme de mathématiques avec les méthodes utilisées pour résoudre les problèmes posés et ce que l'informatique à fait pour les résoudre dans des temps corrects.</p>
+<h1 id="note">Note</h1>
+<h2 id="matière-noire-énergie-noire-et-la-composition-de-lunivers">Matière noire, énergie noire et la composition de l'univers</h2>
+<p>Si l'on souhaite s'intéresser à ces notions, il est possible de se référer aux sources suivantes :</p>
+<ul>
+<li>Wikipédia <sup><a href="#fn27" class="footnoteRef" id="fnref27">27</a></sup> et <sup><a href="#fn28" class="footnoteRef" id="fnref28">28</a></sup></li>
+<li>Le livre de Trinh Xuan Thaun : Désir d'infini <sup><a href="#fn29" class="footnoteRef" id="fnref29">29</a></sup></li>
+<li>Ou encore le très bon dossier de Mathieu, l'épisode 31 qui traitait de la question <sup><a href="#fn30" class="footnoteRef" id="fnref30">30</a></sup></li>
+</ul>
+<p>En ce qui concerne la matière noire il y a grosso modo deux grands types de matière noire :</p>
+<ul>
+<li>La matière noire chaude : composée de particules très rapides dont la vitesse est proche de celle de la lumière</li>
+<li>La matière noire froide : composée de particules plus massives et plus lentes</li>
+</ul>
+<p>Comme expliqué sur Wikipédia et très bien aussi dans le dossier de Mathieu :</p>
+<ul>
+<li>Si l'Univers était dominé par de la matière noire chaude, la très grande vitesse des particules la constituant empêcherait dans un premier temps la formation d'une structure plus petite que le superamas de galaxies qui ensuite se fragmente en amas de galaxies, puis en galaxies, etc. C'est le scénario dit &quot;du haut vers le bas &quot;, puisque les plus grosses structures se forment d'abord, pour ensuite se diviser. Le meilleur candidat pour constituer la matière noire chaude est le neutrino.</li>
+<li>En revanche, si la matière noire froide dominait l'Univers, les particules vont parcourir une distance plus petite et donc effacer les fluctuations de densité sur des étendues plus petites que dans le cas de matière noire chaude. La matière ordinaire va alors se regrouper pour former d'abord des galaxies (à partir de nuages de gaz), qui elles-mêmes se regrouperont en amas, puis superamas. C'est le scénario dit &quot;du bas vers le haut&quot;. Les candidats à la matière noire froide sont les WIMP et les MACHO.&quot;</li>
+</ul>
+<p>Actuellement, c'est le modèle de matière noire froide qui semble l'emporter. En effet, les galaxies sont en équilibre dynamique, ce qui laisse penser qu'elles se sont créées avant les amas — dont tous ne semblent pas encore stables — à qui il faut plus de temps pour atteindre cet équilibre. Cependant, les théories introduisent aujourd'hui un peu de matière noire chaude. Celle-ci est nécessaire pour expliquer la formation des amas ; la matière froide seule ne pouvant la permettre en si peu de temps.</p>
+<h2 id="énergie-fantôme">Énergie fantôme</h2>
+<p>Comme expliqué sur Wikipédia <sup><a href="#fn31" class="footnoteRef" id="fnref31">31</a></sup> :</p>
+<p>En cosmologie, l'énergie fantôme désigne une forme hypothétique d'énergie dont la densité aurait la particularité surprenante d'augmenter lors de l'expansion de l'Univers. Cette énergie est un candidat potentiel à l'énergie noire. Cette forme d'énergie noire implique la violation d'un principe physique connu sous le nom de condition faible sur l'énergie <sup><a href="#fn32" class="footnoteRef" id="fnref32">32</a></sup> (valable pour les fluides parfaits). Cet argument est l'un des principaux écueils théoriques à l'existence de l'énergie fantôme. Cependant, la condition faible sur l'énergie n'est valable que pour les fluides parfaits. L'énergie sombre pourrait donc ne pas enfreindre ce principe, à condition de postuler une interaction avec d'autres composants cosmologiques, comme, par exemple, la matière sombre. L'énergie fantôme, si elle existe, serait responsable d'un emballement de l'expansion de l'Univers, qui causerait un éloignement arbitrairement grand des différents objets célestes les uns des autres en un temps fini, puis une dislocation de ceux-ci : c'est le modèle cosmologique du Big Rip <sup><a href="#fn33" class="footnoteRef" id="fnref33">33</a></sup>. Dans ce scénario, la densité de l'univers atteint une valeur infinie en un temps fini, terminant son existence par une singularité gravitationnelle où toute structure, des amas de galaxies aux atomes, sont détruits.</p>
+<p>Ce modèle diffère du Big Crunch, dans lequel l'expansion s'arrête pour laisser place à une phase de contraction. Dans ce dernier cas, les objets astrophysiques sont détruits car ils entrent en collision les uns avec les autres (ils sont &quot;écrasés&quot;, d'où Big &quot;Crunch&quot;), alors que dans le cas du Big Rip, ils sont étirés par une expansion de plus en plus violente, jusqu'à être disloqués (ils sont « déchirés », d'où Big &quot;Rip&quot;). L'hypothèse du scénario du Big Rip est pour l'heure marginalement compatible avec les données observationnelles et reste donc relativement spéculative.</p>
 <div class="footnotes">
 <hr />
 <ol>
@@ -177,6 +200,13 @@
 <li id="fn24"><p><a href="http://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9rateur_congruentiel_lin%C3%A9aire">http://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9rateur_congruentiel_lin%C3%A9aire</a><a href="#fnref24">↩</a></p></li>
 <li id="fn25"><p><a href="http://fr.wikipedia.org/wiki/RANDU">http://fr.wikipedia.org/wiki/RANDU</a><a href="#fnref25">↩</a></p></li>
 <li id="fn26"><p><a href="http://fr.wikipedia.org/wiki/Mersenne_Twister">http://fr.wikipedia.org/wiki/Mersenne_Twister</a><a href="#fnref26">↩</a></p></li>
+<li id="fn27"><p><a href="http://fr.wikipedia.org/wiki/Mati%C3%A8re_noire">http://fr.wikipedia.org/wiki/Mati%C3%A8re_noire</a><a href="#fnref27">↩</a></p></li>
+<li id="fn28"><p><a href="http://fr.wikipedia.org/wiki/%C3%89nergie_sombre">http://fr.wikipedia.org/wiki/%C3%89nergie_sombre</a><a href="#fnref28">↩</a></p></li>
+<li id="fn29"><p><a href="http://www.fayard.fr/desir-dinfini-9782213635118">http://www.fayard.fr/desir-dinfini-9782213635118</a><a href="#fnref29">↩</a></p></li>
+<li id="fn30"><p><a href="http://www.podcastscience.fm/dossiers/2011/04/07/dossier-la-matiere-noire/">http://www.podcastscience.fm/dossiers/2011/04/07/dossier-la-matiere-noire/</a><a href="#fnref30">↩</a></p></li>
+<li id="fn31"><p><a href="http://fr.wikipedia.org/wiki/%C3%89nergie_fant%C3%B4me">http://fr.wikipedia.org/wiki/%C3%89nergie_fant%C3%B4me</a><a href="#fnref31">↩</a></p></li>
+<li id="fn32"><p><a href="http://fr.wikipedia.org/wiki/Condition_sur_l%27%C3%A9nergie">http://fr.wikipedia.org/wiki/Condition_sur_l%27%C3%A9nergie</a><a href="#fnref32">↩</a></p></li>
+<li id="fn33"><p><a href="http://fr.wikipedia.org/wiki/Big_Rip">http://fr.wikipedia.org/wiki/Big_Rip</a><a href="#fnref33">↩</a></p></li>
 </ol>
 </div>
 </body>
