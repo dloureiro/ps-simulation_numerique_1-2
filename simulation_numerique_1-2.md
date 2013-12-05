@@ -1,20 +1,73 @@
 # La simulation numérique 1/2
 
-## Introduction
+## Introduction sur les modèles
 
-On l'a déjà expliquer de manière détaillée dans différents podcasts, pour comprendre le monde qui nous entoure et arriver à savoir ce qui nous a amené où nous en sommes et arriver à prévoir (tant que faire se peut) ce qu'il va arriver, il est nécessaire de le modéliser.
+### Les modèles permettent de décrire une approximation de la réalité
 
-C'est tout le travail des modèles. Ils servent à fournir une description du monde, ou tout du moins, des phénomènes qu'ils tentent de représenter.
+Quand on souhaite comprendre comment fonctionne le monde qui nous entoure, comment il fonctionne, et que l'on veut essayer de prévoir des choses, on cherche à définir des lois qui semblent être celles suivies pour expliquer ce que les expériences montrent.
 
-L'intérêt des modèles [^modelmathwp] est aussi de pouvoir permettre différentes choses :
+Ces lois fonctionnent dans un domaine défini qui va correspondre à des échelles d'observation, à des intervalles de températures, etc.
 
- * La simulation des phénomènes afin de prévoir comment ils vont se comporter dans le futur ou soumis à des contraintes spécifiques
- * La simulation d'interaction entre différents phénomènes où il est nécessaire de savoir comment ceux-ci interagissent
+L'ensemble constitué par ces lois et le domaine dans lequel elles s'appliquent forment le modèle que l'on va utiliser pour décrire un phénomène, pour le comprendre et peut-être même prévoir son évolution.
+
+En fonction des connaissances que l'on acquière au cours du temps, ces lois et ces modèles peuvent être rendues plus précis, ils peuvent être étendus à d'autres phénomènes ou même réfutés. L'évolution de la compréhension de la gravité, de l'attraction, etc en est un bon exemple.
+
+Afin de pouvoir mettre en place un modèle la démarche scientifique va être la suivante :
+
+ * Avoir une question dont on recherche la réponse (comportement d'une aile, évolution du temps, des galaxies, etc)
+ * Limiter le champ de travail afin de pouvoir faire des calculs en un temps fini et de ne pas être parasité par des données non pertinentes
+ * Qu'il représente le phénomène que l'on souhaite observer
+ * Valider le modèle avec les données connues pour s'assurer que l'on est sur quelque chose de valable
+ * Qu'il soit réutilisable et reproductible
+
+L'intérêt des modèles [^modelmathwp] est ainsi de pouvoir permettre différentes choses :
+
+ * La prévision des phénomènes afin de prévoir comment ils vont se comporter dans le futur ou soumis à des contraintes spécifiques
+ * La prévision des interactions entre différents phénomènes où il est nécessaire de savoir comment ceux-ci interagissent
  * Valider que les modèles représentent bien ce qu'ils sont censés modéliser
 
-On comprend rapidement l'intérêt de la simulation [^simulphenowp]  [^siminfowp]  si on prend quelques exemples d'expérimentation et de tests :
+Comme l'explique Wikipedia [^simulphenowp]  [^modelmathwp]  : "On appelle modèle un élément, analogique ou numérique, dont le comportement vis-à-vis d'un phénomène est similaire à celui de l'élément à étudier. Les sorties sont les éléments que l'on veut étudier. Les entrées, paramètres et contraintes sont les éléments dont la variation influe sur le comportement du modèle ; on appelle entrée ceux qui sont commandés par l'expérimentateur, paramètres ceux que l'opérateur choisit de fixer et contraintes ceux qui dépendent d'éléments extérieurs. On appelle simulation l'ensemble constitué par un modèle, les ordres d'entrée, les paramètres et contraintes, et les résultats obtenus.
+Comme indiqué plus haut les maquettes, prototypes, etc. peuvent être considérés comme des modèles analogiques et les essais, tests, manœuvres, etc. comme des simulations analogiques.
+Les équations sont des simulations numériques. Aujourd'hui ce terme s'applique essentiellement aux modèles et simulations réalisés sur ordinateur.
+Dans certains cas on peut réaliser des simulations hybrides, analogiques - numériques, qui intègrent divers éléments dont certains seulement sont représentés par des équations."
 
-L'expérimentation et les tests dans l'industrie de l'aéronautique et l'automobile coûte cher:
+Dans bon nombre de cas, on peut arriver à reproduire les phénomènes en laboratoire afin de les étudier, comprendre si nos modèles sont bons, comment ils se comportent, etc. On va donc parler ici de simulation des phénomènes. On peut reproduire énormément de choses en laboratoire en passant par la chute des pommes pour la gravité, les trous noirs avec du sable, et jusqu'aux comportements des particules les plus élémentaires avec le LHC. Les outils, les méthodes ou mêmes les tailles de labo vont changer en fonction des phénomènes que l'on souhaite étudier.
+
+Mais il y a quand même des choses qui parfois sont trop complexes à reproduire comme les conditions extrêmes de vol pour un avion, des réactions nucléaires ou l'univers lui-même.
+
+### La simulation numérique comme un outil pour pallier aux problèmes d'expérimentation
+
+Pour résoudre ce problème, l'informatique a été utilisé pour réaliser des simulations dites numériques. Comme ceci est expliqué sur la page dédiée à la simulation de phénomènes sur wikipédia : 
+
+> Le principe de base est celui de la représentation du phénomène par une équation. Grâce à une puissance de calcul toujours croissante et à l'augmentation du volume de données stockables il est possible de découper un phénomène complexe en milliers, voire en millions, de phénomènes simples et donc de calculer les résultats sur le phénomène complexe.
+> Exemple : on sait, en aérodynamique, représenter par une équation les forces (portance, traînée) qui résultent de l'action d'un courant d'air sur une plaque plane. On ne sait pas représenter par une équation ces mêmes forces lorsque l'action est exercée sur une surface complexe telle que l'aile d'un avion. La simulation numérique permet de découper l'aile en plusieurs millions de petits éléments qu'on considère comme étant des plaques planes. On peut alors calculer les forces qui s'exercent sur chacune d'entre elle et les combiner pour calculer les forces sur l'aile complète.
+
+### Problématique des modèles et des simulations
+
+Attention, je ne prétends pas que la simulation est la réponse ultime et qu'elle permet de tout prendre en compte et tout comprendre. Tous les phénomènes physiques ne pourront pas forcément être pris en comptes dans la simulation (les passagers qui bougent dans un avion, des phénomènes locaux pour la météo, etc), et les modèles utilisés ... sont des modèles. Ils intègrent donc des hypothèses qui ne seront pas forcément vraie IRL ou des simplifications qui permettent à la simulation d'être pertinente en temps de temps de calcul ou d'espace mémoire à utiliser.
+
+La simulation doit être validée par des expériences physiques afin de s'assurer que le modèle utilisé pour représenter le phénomène étudié est valable et que la simulation numérique basée sur ce modèle est pertinente (les techniques de discrétisation et de calcul doivent aussi être validées). Et pour cela l'expérimentation est indispensable.
+
+Autre point : il est important de noter que l'on ne pourra rien apprendre sur ce qui n'est pas inclus dans notre modèle. On ne peut pas faire de découverte. Il ne faut pas faire croire que l'on peut se servir des modèles pour découvrir des phénomènes, au contraire, pour des modèles complexes, on peut en arriver à des résultats qui peuvent être totalement inattendus : non pas que ce soient des découvertes, mais des conséquences d'interactions non prévues à priori :
+
+ * Dans des modèles multi-échelle (comme pour la simulation un système biologique au niveau macro-cellulaire, micro-cellulaire, biochimique, génétique, etc)
+ * Ou des modèles multi-physique (comme pour la simulation de mécanique des fluides en conditions extrêmes : air/eau/glace résistance des matériaux, thermodynamique, etc).
+
+Encore un point sur les modèles : les modélisation choisies pour représenter des phénomènes sont choisies la plupart de temps pour étudier certains éléments spécifiques. Quand on veut étudier le comportement d'une aile d'avion au sein d'un écoulement d'air, on peut proposer des modèles différents si l'on veut étudier :
+
+ * son comportement avec un écoulement sub-sonique
+ * son comportement avec un écoulement super-sonique
+ * son comportement dans des conditions extrêmes (air + basse température + eau)
+
+Pour chacune de ces simulations, on va avoir des équations qui seront modélisées de manière différente car les composantes qui seront importantes seront différentes, voire il sera nécessaire d'ajouter des éléments à la simulation comme la prise en compte de la température, où la prise en compte des interactions air/eau, etc.
+
+**Je sais que part le passé, il y a eu tout un échange sur les modèles, et notamment leur limites (un HS d'ailleurs), est ce que vous pourriez donner votre point de vue sur leur usage ?**
+
+Le tableau dressé sur les modèles ou la simulation jusqu'ici est un peu noir, mais il ne faut pas trop s'affoler. J'ai appuyé sur ces points pour vraiment expliquer la réalité des choses. Avec les simulations numériques on arrive à faire des choses vraiment extraordinaires ! En fait on peut rapidement comprendre l'intérêt de la simulation numérique [^simulphenowp]  [^siminfowp] si on prend quelques exemples d'expérimentation et de tests (de la simulation analogique) et c'est ce que l'on va faire dans la suite du podcast. 
+
+## Mécanique des fluides, aéronautique et automobile
+
+Dans ces domaines l'expérimentation et les tests coûtent excessivement cher. On a grosso modo deux types d'expériences que l'on peut réaliser : 
 
  * On peut faire des tests en soufflerie
  * On peut faire des tests en conditions réelles
@@ -25,7 +78,7 @@ de l'avion de transport supersonique Epistle
 de l'avion de transport supersonique Epistle
 (DAAP - Gérald Carrier) [http://hathor.onera.fr/images-science/simulation-numerique/sst-epistle.php](http://hathor.onera.fr/images-science/simulation-numerique/sst-epistle.php)")
 
-## Expériences et tests en soufflerie
+### Expériences et tests en soufflerie
 
 Il s'agit ici de tester l'écoulement de fluides autour d'éléments dont on veut comprendre le comportement. On se sert la plupart du temps de fumée pour "voir" les écoulements. Les éléments testés peuvent être instrumentés (les objets sont équipés de capteurs qui vont permettre de connaître différentes grandeurs physiques comme la température, la pression, etc) pour comprendre les températures ou les contraintes auxquels ils sont soumis.
 
@@ -37,7 +90,7 @@ Seules certaines composantes des écoulements vont pouvoir être testé, on ne p
 
 On voit donc que cela peut devenir compliqué de tester des conditions extrêmes de vol comme par exemple (températures basses, écoulement d'air, gouttelettes d'eau pour simuler des nuages, etc).
 
-## En grandeur réelle
+### En grandeur réelle
 
 Ceci peut par exemple se voir pour le test de crash de voiture. Ici des conditions spécifiques vont être testées : impact de collision de voitures à différentes vitesses, avec différents angles ou points d'impact, etc.
 On voit rapidement que cela va coûter cher car il est nécessaire d'utiliser des véhicules ... et de les faire percuter des objets de manière plus ou moins violente.
@@ -91,44 +144,9 @@ Cela représentait la simulation de l'évolution de plus de 550 milliards de par
 
 On pourrait illustrer cela avec encore d'autres domaines comme la génétique où l'on ne peut pas tester toutes les maladies avec tous les remèdes possibles pour d'évidentes raisons éthiques ... Ou bien la physique nucléaire où soit il est nécessaire d'avoir des instruments très complexes à disposition pour faire des expériences (LHC, Iter, etc), soit il faut pouvoir faire des tirs de bombes nucléaires pour observe ce qu'il se passe (mais ce n'est plus autorisé dans nos démocraties, et puis de manière générale ce n'est pas top). Un autre domaine où il est compliqué aussi de faire des expériences en grandeur réelle est celle de la sélection naturelle et/ou de l'évolution biologique, le podcast de Marco sur l'expérience de Lenski montre bien que c'est complexe et que la simulation peut avoir un vrai apport. David pourra sûrement nous en parler plus en détail!
 
-**David, est ce que tu as des précisions sur les aspects de simulation de l'évolution biologique et de la séléction naturelle ?**
+**David, est ce que tu as des précisions sur les aspects de simulation de l'évolution biologique et de la sélection naturelle ?**
 
-Il est donc indispensable de simuler grâce à l'informatique tous ces phénomènes afin de valider les modèles que l'on utilise, de comprendre leur comportement, et de pouvoir prévoir comment ces phénomènes vont évoluer.
-
-## Attention
-
-Attention, je ne prétends pas que la simulation est la réponse ultime et qu'elle permet de tout prendre en compte et tout comprendre. Tous les phénomènes physiques ne pourront pas forcément être pris en comptes (comme expliqué pour la simulation de la météorologie) dans la simulation, et les modèles utilisés ... sont des modèles. Ils intègrent donc des hypothèses qui ne seront pas forcément vraie IRL ou des simplifications qui permettent à la simulation d'être pertinente en temps de temps de calcul ou d'espace mémoire à utiliser.
-
-Et comme je l'ai dit, la simulation doit être validée pour certains cas, afin de s'assurer que le modèle utilisé pour représenter le phénomène étudié est valable et que la simulation numérique basée sur ce modèle est pertinente (les techniques de discrétisation et de calcul doivent aussi être validée). Et pour cela l'expérimentation est indispensable.
-
-## Problématique des modèles
-
-Comme l'explique Wikipedia [^simulphenowp]  [^modelmathwp]  : "On appelle modèle un élément, analogique ou numérique, dont le comportement vis-à-vis d'un phénomène est similaire à celui de l'élément à étudier. Les sorties sont les éléments que l'on veut étudier. Les entrées, paramètres et contraintes sont les éléments dont la variation influe sur le comportement du modèle ; on appelle entrée ceux qui sont commandés par l'expérimentateur, paramètres ceux que l'opérateur choisit de fixer et contraintes ceux qui dépendent d'éléments extérieurs. On appelle simulation l'ensemble constitué par un modèle, les ordres d'entrée, les paramètres et contraintes, et les résultats obtenus.
-Comme indiqué plus haut les maquettes, prototypes, etc. peuvent être considérés comme des modèles analogiques et les essais, tests, manœuvres, etc. comme des simulations analogiques.
-Les équations sont des simulations numériques. Aujourd'hui ce terme s'applique essentiellement aux modèles et simulations réalisés sur ordinateur.
-Dans certains cas on peut réaliser des simulations hybrides, analogiques - numériques, qui intègrent divers éléments dont certains seulement sont représentés par des équations."
-
-Attention cependant : il est important de noter que l'on ne pourra rien apprendre sur ce qui n'est pas inclus dans notre modèle. On ne peut pas faire de découverte. Il ne faut pas faire croire que l'on peut se servir des modèles pour découvrir des phénomènes, au contraire, pour des modèles complexes, on peut en arriver à des résultats qui peuvent être totalement inattendus : non pas que ce soient des découvertes, mais des conséquences d'interactions des modèles multi-échelle (comme pour la simulation un système biologique au niveau macro-cellulaire, micro-cellulaire, biochimique, génétique, etc) et multi-physique (comme pour la simulation de mécanique des fluides en conditions extrêmes : air/eau/glace résistance des matériaux, thermodynamique, etc) entre leurs composantes.
-
-Encore un point sur les modèles : les modélisation choisies pour représenter des phénomènes sont choisies la plupart de temps pour étudier certains phénomènes. Quand on veut étudier le comportement d'une aile d'avion au sein d'un écoulement d'air, on peut proposer des modèles différents si l'on veut étudier :
-
- * son comportement avec un écoulement sub-sonique
- * son comportement avec un écoulement super-sonique
- * son comportement dans des conditions extrêmes (air + basse température + eau)
-
-Pour chacune de ces simulations, on va avoir des équations qui seront modélisées de manière différente car les composantes qui seront dimensionnantes seront différentes, voire il sera nécessaire d'ajouter des éléments à la simulation comme la prise en compte de la température, où la prise en compte des interactions air/eau, etc.
-
-Afin de pouvoir mettre en place un modèle il faut :
-
- * Avoir une question dont on recherche la réponse (comportement d'une aile, évolution du temps, des galaxies, etc)
- * Limiter le champ de travail afin de pouvoir faire des calculs en un temps fini et de ne pas être parasité par des données non pertinentes
- * Qu'il représente le phénomène que l'on souhaite observer
- * Valider le modèle avec les données connues pour s'assurer que l'on est sur quelque chose de valable
- * Qu'il soit réutilisable et reproductible
-
-**Je sais que part le passé, il y a eu tout un échange sur les modèles, et notamment leur limites (un HS d'ailleurs), est ce que vous pourriez donner votre point de vue sur leur usage ?**
-
-## Première simulation : Méthode de monte carlo et physique nucléaire
+## Physique nucléaire et méthodes de Monté Carlo : première simulation numérique
 
 ![Représentation du calcul de la valeur de pi par rapport au nombre de points aléatoires étant contenus dans un quart de cercle, l'ensemble des possible étant un carré de coté R. L'exemple est pris avec 100 points [http://commons.wikimedia.org/wiki/File:Montecarlo-valeur-pi.svg](http://commons.wikimedia.org/wiki/File:Montecarlo-valeur-pi.svg) ](images/Montecarlo-valeur-pi.png "Représentation du calcul de la valeur de pi par rapport du nombre de points aléatoires étant contenus dans un quart de cercle, l'ensemble des possible étant un carré de coté R. L'exemple est pris avec 100 points [http://commons.wikimedia.org/wiki/File:Montecarlo-valeur-pi.svg](http://commons.wikimedia.org/wiki/File:Montecarlo-valeur-pi.svg) ")
 
@@ -149,7 +167,6 @@ Dans la simulation que faisait John Von Neumann il y avait plusieurs étapes qui
     * Soit la branche se termine car le neutron a été absorbé par le matériau sans générer de nouveau neutron ou est sorti complètement de l'objet.
 
 Pour chacune de ces étapes, des distributions de probabilités sont utilisées pour chacun des cas identifiés et il est donc nécessaire de disposer d'une bonne source de nombres aléatoires.
-
 
 ### Importance de la qualité du hasard
 
@@ -188,9 +205,19 @@ Pour finir sur les PRNG, l'un des plus connus pour être de bonne qualité (sauf
 
 Une des dernières problématiques avec l'usage de PRNG est dans le cas de parallélisation de code. Quand un code est déployé sur des serveurs de calcul, une des problématiques qui apparaît est de pouvoir générer pour chaque bout de code une série de nombres aléatoires qui sont indépendants et identiquement distribués et que notamment, on ne se retrouve pas à utiliser les mêmes nombres pseudo-aléatoires sur chaque noeud de calcul.
 
-Je pense que je vais m'arrêter là sur la simulation pour ce podcast. On a pu voir les raisons du besoin de simulation, des problématiques rencontrées avec différents champs de recherche et la première simulation numérique qui était probabiliste.
+## Conclusion
+
+J'espère qu'en vous présentant tout ces cas où l'expérimentation n'est plus vraiment possible (et ceci pour diverses raisons) et où l'informatique a beaucoup apporté, j'ai pu vous montrer qu'il est donc devenu indispensable de simuler grâce à l'informatique.
+
+Je pense que je vais m'arrêter là sur la simulation pour ce podcast. On a pu voir plusieurs choses :
+
+ * Les raisons du besoin de simulation, 
+ * L'attention qu'il faut porter aux problématiques des modèles et des simulations, 
+ * Les problématiques rencontrées avec différents champs de recherche et notamment la première simulation numérique qui était probabiliste.
 
 Dans la suite de ce podcast, on ira plus sur les simulations pour des équations déterministes. On verra trois grandes méthodes utilisées pour passer des modèles à l'ordinateur, et ensuite les ramifications en terme de mathématiques avec les méthodes utilisées pour résoudre les problèmes posés et ce que l'informatique à fait pour les résoudre dans des temps corrects.
+
+----
 
 # Note
 
