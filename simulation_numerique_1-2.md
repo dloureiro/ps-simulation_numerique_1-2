@@ -6,7 +6,7 @@ Cela a déjà été expliqué de manière détaillée dans différents podcasts,
 
 J'ai trouvé un certain nombre de définitions de ce que peut-être un modèle, et elles diffèrent en fonction des domaines d'étude (mathématique, économie, physique, etc). Ce qui en ressort, de mon point de vue, est que le but du modèle est de représenter la réalité en éliminant les détails difficiles à reproduire (ou n'étant pas important pour la simulation ou la résolution du problème) et en se concentrant sur les seuls éléments jugés importants pour l'étude. 
 
-Dans l'épisode sur les objets mathématiques, Robin l'explique très bien quand il parle du pont de Koënigsberg. L'important est uniquement le graphe (le modèle) et pas la réalité (les ponts, les rues, etc) car il réduit la réalité aux seuls éléments importants pour l'étude que l'on souhaite faire.
+Dans l'épisode sur les objets mathématiques, Robin l'explique très bien quand il parle des ponts de Koënigsberg. L'important pour le problème qui nous préoccupe est uniquement le graphe (le modèle) et pas la réalité (les ponts, les rues, etc) car il réduit la réalité aux seuls éléments importants pour l'étude que l'on souhaite faire.
 
 Le modèle ne constitue pas la réalité, il la représente seulement. Comme l'énonce l'adage d'Alfred Korzybski : "La carte n'est pas la territoire" [^Alfredwp].
 
